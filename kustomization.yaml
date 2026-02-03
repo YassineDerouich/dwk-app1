@@ -4,5 +4,5 @@ resources:
 - manifests/deployment.yaml
 - manifests/service.yaml
 images:
-- name: PROJECT/IMAGE
-  newName: mluukkai/dwk1:1
+- name: yasder/dwk-app1
+  newName: yasder/dwk-app1
