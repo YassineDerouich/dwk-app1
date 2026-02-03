@@ -7,6 +7,7 @@ jobs:
   build-publish:
     name: Build, Push, Release
     runs-on: ubuntu-latest
+    environment: DOCKERHUB_USERNAME
 
     steps:
       - name: Checkout
@@ -21,7 +22,7 @@ jobs:
       # tag image with the GitHub SHA to get a unique tag
       - name: Build and publish backend
         run: |-
-          docker build --tag "yasder/yasder/dwk-app1:$GITHUB_SHA" .
+          docker build --tag "yasder/dwk-app1:$GITHUB_SHA" .
           docker push "yasder/dwk-app1:$GITHUB_SHA"
 
       - name: Set up Kustomize
@@ -34,4 +35,4 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           add: 'kustomization.yaml'
-          message: New version released ${{ github.sha }}
+          message: New version released ${{ github.sha }} [skip ci]
