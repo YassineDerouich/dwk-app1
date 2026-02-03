@@ -6,3 +6,4 @@ resources:
 images:
 - name: yasder/dwk-app1
   newName: yasder/dwk-app1
+  newTag: v2
